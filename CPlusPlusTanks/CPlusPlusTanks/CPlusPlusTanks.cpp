@@ -18,6 +18,8 @@
 
 using namespace std;
 
+//Test comment
+
 //This is where the control keys are specified.
 //In order to use it elsewhere in the program, it MUST be defined here.
 //in order to get the key codes look at the link below and follow the format specified by the already defined keys.
@@ -46,7 +48,7 @@ int _tmain(int argc, char** argv) {
 	glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     //glutInitWindowSize(windowWidth, windowHeight);
-	glutInitWindowSize(1600,900);
+	glutInitWindowSize(1280, 720);
     glutCreateWindow("Tanks");
 
 	glutDisplayFunc(draw);
