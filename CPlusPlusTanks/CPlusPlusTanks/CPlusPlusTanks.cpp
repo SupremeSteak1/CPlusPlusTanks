@@ -19,6 +19,7 @@
 using namespace std;
 
 //Test comment
+//Thomas
 
 //This is where the control keys are specified.
 //In order to use it elsewhere in the program, it MUST be defined here.
