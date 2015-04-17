@@ -46,7 +46,7 @@ int _tmain(int argc, char** argv) {
 	glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     //glutInitWindowSize(windowWidth, windowHeight);
-	glutInitWindowSize(1280, 720);
+	glutInitWindowSize(windowWidth, windowHeight);
     glutCreateWindow("Tanks");
 
 	glutDisplayFunc(draw);
@@ -55,9 +55,9 @@ int _tmain(int argc, char** argv) {
     enable2D(windowWidth, windowHeight);
     glColor3f(1.0f, 1.0f, 1.0f);
 
-	//Uncomment if full screen is desired
+	//(Un)comment if full screen is (not) desired
 	//TODO: Add a fullscreen option in the options menu
-	//glutFullScreen();
+	glutFullScreen();
 
 	init();
 
