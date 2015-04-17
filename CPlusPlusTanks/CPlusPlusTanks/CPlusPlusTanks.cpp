@@ -18,9 +18,6 @@
 
 using namespace std;
 
-//This is Gus's comment
-//Another comment for Thomas to test with...
-
 //This is where the control keys are specified.
 //In order to use it elsewhere in the program, it MUST be defined here.
 //in order to get the key codes look at the link below and follow the format specified by the already defined keys.
