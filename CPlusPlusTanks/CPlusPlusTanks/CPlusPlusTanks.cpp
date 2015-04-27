@@ -33,6 +33,7 @@ int targetFramerate = 60;
 string windowTitle;
 
 //Class objects
+
 RenderHandler* renderHandler;
 
 //Methods
@@ -106,4 +107,16 @@ void keyboard() {
     if (GetAsyncKeyState(VK_UP));
     if (GetAsyncKeyState(VK_DOWN));
 	*/
+}
+void c_main( int position, health, shells, angle)
+{
+
+
+
+
+
+
+
+
+
 }
