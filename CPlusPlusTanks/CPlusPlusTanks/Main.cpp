@@ -31,6 +31,7 @@ int windowWidth = GetSystemMetrics(SM_CXSCREEN);
 int windowHeight = GetSystemMetrics(SM_CYSCREEN);
 int targetFramerate = 60;
 
+//Window title string
 string windowTitle;
 
 //Class objects

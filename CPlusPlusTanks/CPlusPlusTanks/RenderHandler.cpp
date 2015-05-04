@@ -26,8 +26,8 @@ textureObj texture[2];
 
 int LoadGLTextures() {
 	int Status=FALSE;
-	if (LoadTGA(&texture[0], "C:/Users/Thomas/Desktop/Compressed.tga") &&
-		LoadTGA(&texture[1], "C:/Users/Thomas/Desktop/Uncompressed.tga"))
+	if (LoadTGA(&texture[0], "C:/Users/17haydent/Desktop/Compressed.tga") &&
+		LoadTGA(&texture[1], "C:/Users/17haydent/Desktop/Uncompressed.tga"))
 	{
 		Status=TRUE;
 
