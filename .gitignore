@@ -8,7 +8,6 @@ Thumbs.db
 *_i.c
 *_p.c
 *.ncb
-*.suo
 *.bak
 *.cache
 *.ilk
