@@ -108,15 +108,17 @@ void keyboard() {
     if (GetAsyncKeyState(VK_DOWN));
 	*/
 }
-void c_main( int position, health, shells, angle)
+void tank_main( int position, health, shells, angle)
 {
+	class Tank
+	{
+     public:
+     tank_health = 0;
+     tank_shells = 0;
+     tank_position = 0;
+     tank_angle = 0;
+     tank_power = 0;
+	 private:
 
-
-
-
-
-
-
-
-
+	}
 }
