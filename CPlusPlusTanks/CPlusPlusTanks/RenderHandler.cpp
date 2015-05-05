@@ -1,18 +1,53 @@
 #include "stdafx.h"
 #include "RenderHandler.h"
+#include "textureObj.h"
 
+
+#include <iostream>
 #include <string>
 #include <windows.h>
 #include <iostream>
 #include <conio.h>
 #include <sstream> 
 #include <math.h> 
+#include <assert.h>
 #include <gl\gl.h>
 #include <gl\glu.h>
 #include "GL/freeglut.h"
 #pragma comment(lib, "Opengl32.lib")
 
+using namespace std;
+
+bool LoadTGA(textureObj * texture, char * filename);
+bool LoadUncompressedTGA(textureObj *, char *, FILE *);
+bool LoadCompressedTGA(textureObj *, char *, FILE *);
+
+textureObj texture[2];
+
+int LoadGLTextures() {
+	int Status=FALSE;
+	if (LoadTGA(&texture[0], "C:/Users/17haydent/Desktop/Compressed.tga") &&
+		LoadTGA(&texture[1], "C:/Users/17haydent/Desktop/Uncompressed.tga"))
+	{
+		Status=TRUE;
+
+		for (int loop=0; loop<2; loop++) {
+			glGenTextures(1, &texture[loop].texID);
+			glBindTexture(GL_TEXTURE_2D, texture[loop].texID);
+			glTexImage2D(GL_TEXTURE_2D, 0, texture[loop].bpp / 8, texture[loop].width, texture[loop].height, 0, texture[loop].type, GL_UNSIGNED_BYTE, texture[loop].imageData);
+			glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+			glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+
+			if (texture[loop].imageData) {
+				free(texture[loop].imageData);
+			}
+		}
+	}
+	return Status;
+}
+
 RenderHandler::RenderHandler() {
+	LoadGLTextures();
 
 }
 
@@ -35,6 +70,28 @@ void RenderHandler::draw() {
 	drawRect(250.0, 50.0, 50, 100, 1.0, 1.0, 1.0, true);
 	drawRect(300.0, 50.0, 50, 100, 1.0, 1.0, 1.0, false);
 
+	for(int i = 0; i < 2; i++) {
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, texture[i].texID);
+		glColor3ub(255, 255, 255);
+
+		glBegin(GL_QUADS);
+			glTexCoord2f(0.0, 0.0);
+			glVertex2f(((i+1)*300)+0, ((i+1)*300)+0);
+
+			glTexCoord2f(1.0, 0.0);
+			glVertex2f(((i+1)*300)+500, ((i+1)*300)+0);
+
+			glTexCoord2f(1.0, 1.0);
+			glVertex2f(((i+1)*300)+500, ((i+1)*300)+400);
+
+			glTexCoord2f(0.0, 1.0);
+			glVertex2f(((i+1)*300)+0, ((i+1)*300)+400);
+
+		glEnd();
+
+		glDisable(GL_TEXTURE_2D);
+	}
     glutSwapBuffers();
 }
 

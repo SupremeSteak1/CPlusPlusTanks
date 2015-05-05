@@ -1,115 +1,17 @@
 // CPlusPlusTanks.cpp : Defines the entry point for the console application.
 //
-
+//Include precompiled headers
 #include "stdafx.h"
-#include <string>
-#include <windows.h>
-#include <iostream>
-#include <conio.h>
-#include <sstream> 
-#include <math.h> 
-#include <gl\gl.h>
-#include <gl\glu.h>
-#include "GL/freeglut.h"
-#pragma comment(lib, "Opengl32.lib")
 
 //Include custom classes
-#include "RenderHandler.h"
-
-using namespace std;
-
-//This is where the control keys are specified.
-//In order to use it elsewhere in the program, it MUST be defined here.
-//in order to get the key codes look at the link below and follow the format specified by the already defined keys.
-//http://msdn.microsoft.com/en-us/library/windows/desktop/dd375731%28v=vs.85%29.aspx
-#define VK_W 0x57
-#define VK_S 0x53
-#define VK_ESCAPE 0x1B
-
-int windowWidth = GetSystemMetrics(SM_CXSCREEN);
-int windowHeight = GetSystemMetrics(SM_CYSCREEN);
-int targetFramerate = 60;
-
-string windowTitle;
-
-//Class objects
-
-RenderHandler* renderHandler;
-
-//Methods
-void enable2D(int width, int height);
-void init();
-void draw();
-void update(int useless);
-void keyboard();
+#include "Main.h"
 
 int _tmain(int argc, char** argv) {
-	glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-    //glutInitWindowSize(windowWidth, windowHeight);
-	glutInitWindowSize(windowWidth, windowHeight);
-    glutCreateWindow("Tanks");
-
-	glutDisplayFunc(draw);
-    glutTimerFunc(targetFramerate, update, 0);
-
-    enable2D(windowWidth, windowHeight);
-    glColor3f(1.0f, 1.0f, 1.0f);
-
-	//(Un)comment if full screen is (not) desired
-	//TODO: Add a fullscreen option in the options menu
-	glutFullScreen();
-
-	init();
-
-    glutMainLoop();
-	return 0;
+	new Main(argc, argv);
 }
 
-//Enables the 2D ability of OpenGL
-void enable2D(int width, int height) {
-    glViewport(0, 0, width, height);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glOrtho(0.0f, width, 0.0f, height, 0.0f, 1.0f);
-    glMatrixMode (GL_MODELVIEW);
-    glLoadIdentity();
-}
-
-//Initialize the program
-void init() {
-	renderHandler = new RenderHandler();
-}
-
-//Update game visuals
-void draw() {
-	renderHandler->draw();
-}
-
-//Update game variables and logic
-void update(int useless) {
-	glutTimerFunc(targetFramerate, update, 0);
-	//Do updating stuff here!
-	renderHandler->update();
-	keyboard();
-}
-
-//Do respective actions when keyboard is pressed
-void keyboard() {
-	//REMEMBER TO MAKE SURE THE KEY YOU ARE TRYING TO USE IS DEFINED AT THE TOP OF THIS PAGE!!!
-	if (GetAsyncKeyState(VK_ESCAPE)) {
-		exit(EXIT_SUCCESS);
-	}
-	/*
-    if (GetAsyncKeyState(VK_W));
-    if (GetAsyncKeyState(VK_S));
-
-    if (GetAsyncKeyState(VK_UP));
-    if (GetAsyncKeyState(VK_DOWN));
-	*/
-}
+/*
 void tank_main( int position, health, shells, angle)
-{
 	class Tank
 	{
      public:
@@ -119,6 +21,18 @@ void tank_main( int position, health, shells, angle)
      tank_angle = 0;
      tank_power = 0;
 	 private:
-
 	}
-}
+This area is being used to describe how the Main class works.
+Main::Main()       -- This is used to initialize all the OpenGL stuff, and any other things.
+					  This should not be touched unless adding custom init methods.
+Main::openGLInit() -- Don't touch
+Main::init()	   -- Put anything that needs to be run ONCE in here.
+					  If you have a lot of stuff, create your own init method to manage the code better.
+void update()	   -- This is called 60 times a second.
+					  All of the updating should be done from here, calling your own class' method.
+					  THIS IS EFECTIVLY THE WHILE TRUE LOOP THAT WOULD OTHERWISE BE IN THE MAIN METHOD.
+void draw()		   -- This is called as many times as possible a second, and should not be touched.
+void keyboard()	   -- This gets keyboard input using if statments.
+					  It is called from the update method, meaning that it is called 60 times a second
+					  See examples in the method itself.
+*/
