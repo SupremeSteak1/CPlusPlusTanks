@@ -18,6 +18,11 @@ void tank_main( int position, health, shells, angle)
 		std::gettank_pos;
 		std::gettank_shells;
 		std::gettank_angle;
+
+		std::settank_health;
+		std::settank_pos;
+		std::settank_shells;
+		std::settank_angle;
     
 	}
 /*
