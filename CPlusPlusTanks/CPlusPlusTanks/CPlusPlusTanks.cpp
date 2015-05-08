@@ -11,14 +11,17 @@ int _tmain(int argc, char** argv) {
 }
 
 
-void tank_main( int position, health, shells, angle)
+void tank_main(int tank_pos, tank_health, tank_shells, tank_angle)
 	class Tank
 	{
+
+		// get values for tank variables
 		std::gettank_health;
 		std::gettank_pos;
 		std::gettank_shells;
 		std::gettank_angle;
 
+        /// set values for tank variables
 		std::settank_health;
 		std::settank_pos;
 		std::settank_shells;
