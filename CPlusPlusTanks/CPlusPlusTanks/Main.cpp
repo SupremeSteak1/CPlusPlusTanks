@@ -16,6 +16,7 @@
 //Include custom classes
 #include "RenderHandler.h"
 #include "Main.h"
+#include "BaseGameLogic.h"
 
 using namespace std;
 
@@ -36,6 +37,7 @@ string windowTitle;
 
 //Class objects
 RenderHandler* renderHandler;
+BaseGameLogic* gameLogic;
 
 //Methods
 void enable2D(int width, int height);
@@ -87,6 +89,7 @@ void Main::openGLInit(int argc, char** argv) {
 //Initialize the program
 void Main::init() {
 	renderHandler = new RenderHandler();
+	gameLogic = new BaseGameLogic();
 }
 
 void Main::c_main( int position, int health, int shells, float angle) {
@@ -119,6 +122,7 @@ void update(int useless) {
 	glutTimerFunc(targetFramerate, update, 0);
 	//Do updating stuff here!
 	renderHandler->update();
+	gameLogic->update();
 	keyboard();
 }
 
@@ -128,7 +132,24 @@ void keyboard() {
 	if (GetAsyncKeyState(VK_ESCAPE)) {
 		exit(EXIT_SUCCESS);
 	}
+
+	if (GetAsyncKeyState(VK_S)) {
+		exit(EXIT_SUCCESS);
+	}
 	
+	if (GetAsyncKeyState(VK_W)) {
+		exit(EXIT_SUCCESS);
+	}
+	
+	if (GetAsyncKeyState(VK_LEFT)) {
+		exit(EXIT_SUCCESS);
+	}
+	
+	if (GetAsyncKeyState(VK_RIGHT)) {
+		exit(EXIT_SUCCESS);
+	}
+	
+
 	/*
 	Example 1 -- Calling a method inside your own class to do what you
 	need to do. This example shows the game being paused when the 'esc'
