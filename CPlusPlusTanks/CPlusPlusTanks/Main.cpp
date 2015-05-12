@@ -26,7 +26,10 @@ using namespace std;
 //http://msdn.microsoft.com/en-us/library/windows/desktop/dd375731%28v=vs.85%29.aspx
 #define VK_W 0x57
 #define VK_S 0x53
+#define VK_UP 0x26
 #define VK_ESCAPE 0x1B
+#define VK_DOWN 0x28
+#define VK_SPACE 0x20
 
 int windowWidth = GetSystemMetrics(SM_CXSCREEN);
 int windowHeight = GetSystemMetrics(SM_CYSCREEN);
@@ -134,21 +137,28 @@ void keyboard() {
 	}
 
 	if (GetAsyncKeyState(VK_S)) {
-		exit(EXIT_SUCCESS);
+		BaseGameLogic.moveBack(); 
 	}
-	
+
 	if (GetAsyncKeyState(VK_W)) {
-		exit(EXIT_SUCCESS);
+		BaseGameLogic.moveForward(); 
 	}
-	
-	if (GetAsyncKeyState(VK_LEFT)) {
-		exit(EXIT_SUCCESS);
+
+	if (GetAsyncKeyState(VK_UP)) {
+		BaseGameLogic.aimUp(); 
 	}
-	
-	if (GetAsyncKeyState(VK_RIGHT)) {
-		exit(EXIT_SUCCESS);
+
+	if (GetAsyncKeyState(VK_DOWN)) {
+		BaseGameLogic.aimDown(); 
 	}
-	
+
+	if (GetAsyncKeyState(VK_SPACE)) {
+		BaseGameLogic.shootRound(); 
+	}
+
+	if (GetAsyncKeyState(VK_SPACE)) {
+		BaseGameLogic.shootRound(); 
+	}
 
 	/*
 	Example 1 -- Calling a method inside your own class to do what you
