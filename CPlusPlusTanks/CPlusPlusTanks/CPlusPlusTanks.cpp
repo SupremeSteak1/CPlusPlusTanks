@@ -10,7 +10,7 @@ int _tmain(int argc, char** argv) {
 	new Main(argc, argv);
 }
 
-
+/*
 void tank_main(int tank_pos, tank_health, tank_shells, tank_angle)
 	class Tank
 	{
@@ -28,6 +28,7 @@ void tank_main(int tank_pos, tank_health, tank_shells, tank_angle)
 		std::settank_angle;
     
 	}
+	*/
 /*
 This area is being used to describe how the Main class works.
 Main::Main()       -- This is used to initialize all the OpenGL stuff, and any other things.
