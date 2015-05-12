@@ -26,12 +26,14 @@ textureObj texture[2];
 
 int LoadGLTextures() {
 	int Status=FALSE;
-	if (LoadTGA(&texture[0], "C:/Users/17haydent/Desktop/Compressed.tga") &&
-		LoadTGA(&texture[1], "C:/Users/17haydent/Desktop/Uncompressed.tga"))
+	if (LoadTGA(&texture[0], "Compressed.tga") &&
+		LoadTGA(&texture[1], "Uncompressed.tga"))
 	{
 		Status=TRUE;
 
 		for (int loop=0; loop<2; loop++) {
+			glEnable(GL_BLEND);
+			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 			glGenTextures(1, &texture[loop].texID);
 			glBindTexture(GL_TEXTURE_2D, texture[loop].texID);
 			glTexImage2D(GL_TEXTURE_2D, 0, texture[loop].bpp / 8, texture[loop].width, texture[loop].height, 0, texture[loop].type, GL_UNSIGNED_BYTE, texture[loop].imageData);
