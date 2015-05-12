@@ -20,12 +20,12 @@ void tank_main(int tank_pos, tank_health, tank_shells, tank_angle)
 		void getHealth(int);
 		void getShells(int);
 		void getPos(int);
-		void getAngle(int);
+		void getAngle(float);
 		void getPower(int);
 		void setHealth(int);
 		void setShells(int);
 		void setPos(int);
-		void setAngle(int);
+		void setAngle(float);
 		void setPower(int);
 
 			// get values for tank variables
@@ -42,7 +42,7 @@ void tank_main(int tank_pos, tank_health, tank_shells, tank_angle)
 			std::settank_shells;
 			std::settank_angle;
     
-	}
+	};
 	*/
 /*
 This area is being used to describe how the Main class works.
