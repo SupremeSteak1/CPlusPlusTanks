@@ -1,6 +1,7 @@
 #include "stdafx.h"
 
-// void tank_main(int tank_pos, tank_health, tank_shells, tank_angle)  // passing in tank variables
+<<<<<<< HEAD
+void tank_main(int tank_pos, tank_health, tank_shells, tank_angle)
 
 //class Tank
 //	{	private:
@@ -16,6 +17,11 @@
 	//		void setAngle(float);
 	//		void setPower(int);
 //	};
+	class getTank
+=======
+// void tank_main(int tank_pos, tank_health, tank_shells, tank_angle)  // passing in tank variables
+	class Tank
+>>>>>>> 3ef7779bff7d27c0eb89432f9d7148d12ed65bde
 	{
 		int tank_pos, tank_health, tank_shells, tank_angle, tank_power;
 
