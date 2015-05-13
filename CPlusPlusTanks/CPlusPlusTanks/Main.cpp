@@ -31,6 +31,10 @@ using namespace std;
 #define VK_ESCAPE 0x1B
 #define VK_DOWN 0x28
 #define VK_SPACE 0x20
+#define VK_NEXT 0x22 //page down key
+#define VK_PRIOR 0x21 //page up key
+#define 0x45 //E key
+#define 0x51 //Q key
 
 int windowWidth = GetSystemMetrics(SM_CXSCREEN);
 int windowHeight = GetSystemMetrics(SM_CYSCREEN);
