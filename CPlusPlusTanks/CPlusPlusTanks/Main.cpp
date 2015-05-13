@@ -16,6 +16,7 @@
 //Include custom classes
 #include "RenderHandler.h"
 #include "Main.h"
+#include "BaseGameLogic.h"
 
 
 using namespace std;
@@ -132,6 +133,8 @@ void update(int useless) {
 //Do respective actions when keyboard is pressed
 void keyboard() {
 	//REMEMBER TO MAKE SURE THE KEY YOU ARE TRYING TO USE IS DEFINED AT THE TOP OF THIS PAGE!!!
+
+	/*
 	if (GetAsyncKeyState(VK_ESCAPE)) {
 		exit(EXIT_SUCCESS);
 	}
@@ -159,6 +162,7 @@ void keyboard() {
 	if (GetAsyncKeyState(VK_SPACE)) {
 		BaseGameLogic.shootRound(); 
 	}
+	*/
 
 	/*
 	Example 1 -- Calling a method inside your own class to do what you

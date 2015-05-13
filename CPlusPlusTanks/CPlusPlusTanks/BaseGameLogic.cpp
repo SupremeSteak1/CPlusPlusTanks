@@ -9,5 +9,7 @@ using namespace std;
 void update() {
 	cout << "Game Start";
 
+	while(true) {
 
+	}
 }
