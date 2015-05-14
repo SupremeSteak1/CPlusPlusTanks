@@ -33,8 +33,8 @@ using namespace std;
 #define VK_SPACE 0x20
 #define VK_NEXT 0x22 //page down key
 #define VK_PRIOR 0x21 //page up key
-#define 0x45 //E key
-#define 0x51 //Q key
+#define VK_E 0x45 //E key
+#define VK_Q 0x51 //Q key
 
 int windowWidth = GetSystemMetrics(SM_CXSCREEN);
 int windowHeight = GetSystemMetrics(SM_CYSCREEN);
@@ -138,16 +138,16 @@ void update(int useless) {
 void keyboard() {
 	//REMEMBER TO MAKE SURE THE KEY YOU ARE TRYING TO USE IS DEFINED AT THE TOP OF THIS PAGE!!!
 
-	/*
+	
 	if (GetAsyncKeyState(VK_ESCAPE)) {
 		exit(EXIT_SUCCESS);
 	}
-
-	if (GetAsyncKeyState(VK_S)) {
+	/*
+	if (GetAsyncKeyState(VK_A)) {
 		BaseGameLogic.moveBack(); 
 	}
 
-	if (GetAsyncKeyState(VK_W)) {
+	if (GetAsyncKeyState(VK_D)) {
 		BaseGameLogic.moveForward(); 
 	}
 
