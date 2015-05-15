@@ -27,9 +27,11 @@ using namespace std;
 //http://msdn.microsoft.com/en-us/library/windows/desktop/dd375731%28v=vs.85%29.aspx
 #define VK_W 0x57
 #define VK_S 0x53
+#define VK_A 0x41
+#define VK_D 0x44
 #define VK_UP 0x26
-#define VK_ESCAPE 0x1B
 #define VK_DOWN 0x28
+#define VK_ESCAPE 0x1B
 #define VK_SPACE 0x20
 #define VK_NEXT 0x22 //page down key
 #define VK_PRIOR 0x21 //page up key
