@@ -3,17 +3,31 @@
 
 // Include custom classes
 #include"BaseGameLogic.h"
+#include"Main.h"
 
 using namespace std;
+int i=1
 
 void update() {
+	
 	cout << "Game Start";
 <<<<<<< HEAD
-	
+	while(i=1) {
+		int i++
+		tank_health=100;
+		tank1_posx=5;
+		tank1_posy=0
+		tank_shells;
+		tank_angle;
+		
 =======
 
 	while(true) {
->>>>>>> 15a6390c608e7b17e0457fba5fa4d5a20ea0a557
+		const int moveForward;
+		const int moveBack;
+>>>>>>> 2be90599b1d82cd8195f49eac9291cb21b2899d5
 
+		moveBack = -.1;
+		moveForward = .1;
 	}
 }
