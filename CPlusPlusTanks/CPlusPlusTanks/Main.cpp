@@ -138,24 +138,24 @@ void update(int useless) {
 void keyboard() {
 	//REMEMBER TO MAKE SURE THE KEY YOU ARE TRYING TO USE IS DEFINED AT THE TOP OF THIS PAGE!!!
 
-	/*
+	
 	if (GetAsyncKeyState(VK_ESCAPE)) {
 		exit(EXIT_SUCCESS);
 	}
+	/*
+	if (GetAsyncKeyState(VK_D)) {
+		BaseGameLogic.moveForward(); 
+	}
 
-	if (GetAsyncKeyState(VK_S)) {
+	if (GetAsyncKeyState(VK_A)) {
 		BaseGameLogic.moveBack(); 
 	}
 
 	if (GetAsyncKeyState(VK_W)) {
-		BaseGameLogic.moveForward(); 
-	}
-
-	if (GetAsyncKeyState(VK_UP)) {
 		BaseGameLogic.aimUp(); 
 	}
 
-	if (GetAsyncKeyState(VK_DOWN)) {
+	if (GetAsyncKeyState(VK_S)) {
 		BaseGameLogic.aimDown(); 
 	}
 
@@ -163,9 +163,6 @@ void keyboard() {
 		BaseGameLogic.shootRound(); 
 	}
 
-	if (GetAsyncKeyState(VK_SPACE)) {
-		BaseGameLogic.shootRound(); 
-	}
 	*/
 
 	/*

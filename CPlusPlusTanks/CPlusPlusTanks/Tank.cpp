@@ -2,62 +2,64 @@
 
 // void tank_main(int tank_pos, tank_health, tank_shells, tank_angle)  // passing in tank variables
 
-//class Tank
-//	{	private:
-//		public:
-	//		int getHealth(void);
-	//		int getShells(void);
-	//		int getPos(void);
-	//		float getAngle(void);
-	//		int getPower(void);
-	//		void setHealth(int);
-	//		void setShells(int);
-	//		void setPos(int);
-	//		void setAngle(float);
-	//		void setPower(int);
-//	};
-	{
-		int tank_pos, tank_health, tank_shells, tank_angle, tank_power;
+class Tank
+	{	private:
+		public:
+			int getHealth(void); //gets defined
+			int getShells(void);
+			int getPos(void);
+			float getAngle(void);
+			int getPower(void);
+			void setHealth(int); //sets defined
+			void setShells(int);
+			void setPos(int);
+			void setAngle(float);
+			void setPower(int);
+			Tank();					//tank constructor
+	};
+	//commenting for now so it all runs!
+//{
+	//	int tank_pos, tank_health, tank_shells, tank_angle, tank_power;
 
-	}
+	//}
 
 	// constructor
-	Tank::Tank()
-	{
-		int tank_pos;
-		int tank_health;
-		int tank_shells;
-		int tank_angle;
-		int tank_power;
-	}
-	// set values
-	void tank::settank()
-	{
-        tank_pos = 0;
-	    tank_health = 0;
-	    tank_shells = 0;
-	    tank_angle = 0;
-	    tank_power = 0;
-	}
-	// get values
-	int Tank::getTheTank()
-	{
-     return tank_pos,tank_health,tank_shells,tank_angle,tank_power;
-	}
-
-		// get values for tank variables
-		//std::get int tank_health;
-		//std::get int tank_pos;
-		//std::get int tank_shells;
-		//std::get int tank_angle;
-		//std::get int tank_power;
-	
-        /// set values for tank variables
-		//std::set int tank_health;
-		//std::set int tank_pos;
-		//std::set int tank_shells;
-		//std::set int tank_angle;
-        //:set int tank_power;
-    
-	}
-/*
+//	Tank::Tank()
+//	{
+//		int tank_pos;
+//		int tank_health;
+//		int tank_shells;
+//		int tank_angle;
+//		int tank_power;
+//	}
+//	// set values
+//	void tank::settank()
+//	{
+//        tank_pos = 0;
+//	    tank_health = 0;
+//	    tank_shells = 0;
+//	    tank_angle = 0;
+//	    tank_power = 0;
+//	}
+//	// get values
+//	int Tank::getTheTank()
+//	{
+//     return tank_pos,tank_health,tank_shells,tank_angle,tank_power;
+//	}
+//
+//		// get values for tank variables
+//		//std::get int tank_health;
+//		//std::get int tank_pos;
+//		//std::get int tank_shells;
+//		//std::get int tank_angle;
+//		//std::get int tank_power;
+//	
+//        /// set values for tank variables
+//		//std::set int tank_health;
+//		//std::set int tank_pos;
+//		//std::set int tank_shells;
+//		//std::set int tank_angle;
+//        //:set int tank_power;
+//    
+//	}
+///*

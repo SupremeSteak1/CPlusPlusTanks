@@ -3,6 +3,7 @@
 
 // Include custom classes
 #include"BaseGameLogic.h"
+#include"Main.h"
 
 using namespace std;
 int i=1
@@ -18,6 +19,10 @@ void update() {
 		tank_shells;
 		tank_angle;
 		
+		const int moveForward;
+		const int moveBack;
 
+		moveBack = -.1;
+		moveForward = .1;
 	}
 }
