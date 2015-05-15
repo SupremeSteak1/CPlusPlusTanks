@@ -11,10 +11,10 @@ void update() {
 	cout << "Game Start";
 
 	while(true) {
-		int moveForward;
-		int moveBack;
-		int shootRound;
+		const int moveForward;
+		const int moveBack;
 
-		moveBack = 0;
+		moveBack = -.1;
+		moveForward = .1;
 	}
 }

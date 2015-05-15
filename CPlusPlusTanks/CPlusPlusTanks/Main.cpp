@@ -143,19 +143,19 @@ void keyboard() {
 		exit(EXIT_SUCCESS);
 	}
 	/*
-	if (GetAsyncKeyState(VK_A)) {
-		BaseGameLogic.moveBack(); 
-	}
-
 	if (GetAsyncKeyState(VK_D)) {
 		BaseGameLogic.moveForward(); 
 	}
 
-	if (GetAsyncKeyState(VK_UP)) {
+	if (GetAsyncKeyState(VK_A)) {
+		BaseGameLogic.moveBack(); 
+	}
+
+	if (GetAsyncKeyState(VK_W)) {
 		BaseGameLogic.aimUp(); 
 	}
 
-	if (GetAsyncKeyState(VK_DOWN)) {
+	if (GetAsyncKeyState(VK_S)) {
 		BaseGameLogic.aimDown(); 
 	}
 
@@ -163,9 +163,6 @@ void keyboard() {
 		BaseGameLogic.shootRound(); 
 	}
 
-	if (GetAsyncKeyState(VK_SPACE)) {
-		BaseGameLogic.shootRound(); 
-	}
 	*/
 
 	/*
