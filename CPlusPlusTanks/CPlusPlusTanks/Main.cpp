@@ -40,6 +40,7 @@ string windowTitle;
 
 //Class objects
 RenderHandler* renderHandler;
+BaseGameLogic* gameLogic;
 
 
 //Methods
@@ -92,7 +93,7 @@ void Main::openGLInit(int argc, char** argv) {
 //Initialize the program
 void Main::init() {
 	renderHandler = new RenderHandler();
-	//gameLogic = new BaseGameLogic();
+	gameLogic = new BaseGameLogic();
 }
 
 void Main::c_main( int position, int health, int shells, float angle) {
@@ -125,7 +126,7 @@ void update(int useless) {
 	glutTimerFunc(targetFramerate, update, 0);
 	//Do updating stuff here!
 	renderHandler->update();
-	//gameLogic->update();
+	gameLogic->update();
 	keyboard();
 }
 

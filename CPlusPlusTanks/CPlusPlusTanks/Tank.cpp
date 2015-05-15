@@ -1,22 +1,12 @@
 #include "stdafx.h"
+#include"Tank.h"
+
+Tank::Tank() {
+
+}
 
 // void tank_main(int tank_pos, tank_health, tank_shells, tank_angle)  // passing in tank variables
 
-class Tank
-	{	private:
-		public:
-			int getHealth(void); //gets defined
-			int getShells(void);
-			int getPos(void);
-			float getAngle(void);
-			int getPower(void);
-			void setHealth(int); //sets defined
-			void setShells(int);
-			void setPos(int);
-			void setAngle(float);
-			void setPower(int);
-			Tank();					//tank constructor
-	};
 	//commenting for now so it all runs!
 //{
 	//	int tank_pos, tank_health, tank_shells, tank_angle, tank_power;
