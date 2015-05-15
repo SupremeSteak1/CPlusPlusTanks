@@ -6,10 +6,9 @@
 #include"Main.h"
 
 using namespace std;
-int i=1
 
 void update() {
-	
+
 	cout << "Game Start";
 	while(i=1) {
 		int i++
@@ -18,11 +17,9 @@ void update() {
 		tank1_posy=0
 		tank_shells;
 		tank_angle;
-		
-		const int moveForward;
-		const int moveBack;
 
 		moveBack = -.1;
 		moveForward = .1;
+
 	}
 }
