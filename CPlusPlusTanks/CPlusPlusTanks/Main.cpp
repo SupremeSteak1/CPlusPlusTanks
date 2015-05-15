@@ -25,18 +25,11 @@ using namespace std;
 //In order to use it elsewhere in the program, it MUST be defined here.
 //in order to get the key codes look at the link below and follow the format specified by the already defined keys.
 //http://msdn.microsoft.com/en-us/library/windows/desktop/dd375731%28v=vs.85%29.aspx
+#define VK_ESCAPE 0x1B
 #define VK_W 0x57
 #define VK_S 0x53
 #define VK_A 0x41
 #define VK_D 0x44
-#define VK_UP 0x26
-#define VK_DOWN 0x28
-#define VK_ESCAPE 0x1B
-#define VK_SPACE 0x20
-#define VK_NEXT 0x22 //page down key
-#define VK_PRIOR 0x21 //page up key
-#define VK_E 0x45 //E key
-#define VK_Q 0x51 //Q key
 
 int windowWidth = GetSystemMetrics(SM_CXSCREEN);
 int windowHeight = GetSystemMetrics(SM_CYSCREEN);
