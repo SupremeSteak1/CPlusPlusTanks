@@ -3,9 +3,12 @@
 
 class Tank
 	{	private:
+			int health;
+			int shells;
+			int pos;
+			float angle;
+			int power;
 		public:
-			Tank();
-			/*
 			int getHealth(void); //gets defined
 			int getShells(void);
 			int getPos(void);
@@ -17,6 +20,6 @@ class Tank
 			void setAngle(float);
 			void setPower(int);
 			Tank();					//tank constructor
-			*/
+			
 	}; 
 #endif
