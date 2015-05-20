@@ -1,9 +1,18 @@
 #include<stdafx.h>
 #include<iostream>
+#include "stdafx.h"
+#include <string>
+#include <windows.h>
+#include <iostream>
+#include <conio.h>
+#include <sstream> 
+#include <math.h> 
+
 
 // Include custom classes
 #include"Tank.h"
 #include"BaseGameLogic.h"
+#include"RenderHandler.h"
 
 double MOVE_BACK;
 double MOVE_FORWARD;
@@ -11,11 +20,18 @@ double MOVE_FORWARD;
 Tank tank1;
 Tank tank2;
 
+int score;
+
 BaseGameLogic::BaseGameLogic() {
 	init();
 }
 void BaseGameLogic::init() {
+
 	/*
+	tank1 = new Tank();
+	tank2 = new Tank();
+
+	
 	tank1.tank_health=100;
 	tank1.tank_posx=5;
 	tank1.tank_posy=0
@@ -27,11 +43,15 @@ void BaseGameLogic::init() {
 	tank2.tank_posy=0
 	tank2.tank_shells=0;
 	tank2.tank_angle=30;
-	*/
+	
 	
 	MOVE_BACK = -.1;
 	MOVE_FORWARD = .1;
+	*/
+
 }
 void BaseGameLogic::update() {
+	// Game Start
+
 
 }
