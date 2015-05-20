@@ -48,10 +48,31 @@ void BaseGameLogic::init() {
 	MOVE_BACK = -.1;
 	MOVE_FORWARD = .1;
 	*/
-
 }
 void BaseGameLogic::update() {
 	// Game Start
 
+	cout << "Hi";
+
 
 }
+
+int aimUp;
+int aimDown;
+
+int moveBack;
+int moveForward;
+
+moveBack = -.1;
+moveForward = .1;
+
+aimUp=5;
+aimDown= 5;
+
+tank_posx+=moveBack;
+tank_posx+=moveForward;
+
+tank_angle+=aimUp;
+tank_angle+=aimDown;
+
+keyboard();
