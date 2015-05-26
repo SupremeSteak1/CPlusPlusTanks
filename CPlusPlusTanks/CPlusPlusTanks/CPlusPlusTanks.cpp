@@ -11,40 +11,6 @@ int _tmain(int argc, char** argv) {
 }
 
 /*
-void tank_main(int tank_pos, tank_health, tank_shells, tank_angle)
-	class Tank
-	{
-
-		private:
-		public:
-		void getHealth(int);
-		void getShells(int);
-		void getPos(int);
-		void getAngle(float);
-		void getPower(int);
-		void setHealth(int);
-		void setShells(int);
-		void setPos(int);
-		void setAngle(float);
-		void setPower(int);
-
-			// get values for tank variables
-			std::gettank_health;
-			std::gettank_pos;
-			std::gettank_shells;
-			std::gettank_angle;
-
-
-
-			/// set values for tank variables
-			std::settank_health;
-			std::settank_pos;
-			std::settank_shells;
-			std::settank_angle;
-    
-	};
-	*/
-/*
 This area is being used to describe how the Main class works.
 Main::Main()       -- This is used to initialize all the OpenGL stuff, and any other things.
 					  This should not be touched unless adding custom init methods.
