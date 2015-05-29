@@ -154,11 +154,10 @@ void keyboard() {
 		gameLogic->tankDown(); 
 	}
 
-	/*
 	if (GetAsyncKeyState(VK_SPACE)) {
-		gameLogic->shootRound(); 
+		gameLogic->tankShoot(); 
 	}
-	*/
+	
 
 	/*
 	Example 1 -- Calling a method inside your own class to do what you
