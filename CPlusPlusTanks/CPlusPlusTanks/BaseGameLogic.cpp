@@ -17,14 +17,22 @@ using namespace std;
 
 double MOVE_BACK;
 double MOVE_FORWARD;
+double AIM_UP;
+double AIM_DOWN;
+double HEALTH_TANK;
+double MOD_HEALTH;
+double DAMAGE_TANK;
+float EXPLOSION_RADIUS; 
 
-Tank tank1;
-Tank tank2;
+Tank* tank1;
+Tank* tank2;
 
 BaseGameLogic::BaseGameLogic() {
 	init();
 }
 void BaseGameLogic::init() {
+	tank1 = new Tank();
+
 	MOVE_BACK = -.1;
 	MOVE_FORWARD = .1;
 
@@ -32,6 +40,8 @@ void BaseGameLogic::init() {
 	AIM_DOWN = -5;
 
 	HEALTH_TANK = 100;
+	
+	MOD_HEALTH-=DAMAGE_TANK;
 
 	DAMAGE_TANK = 20;
 
@@ -43,21 +53,32 @@ void BaseGameLogic::update() {
 }
 
 void BaseGameLogic::tankForward() {
-	Tank.move(MOVE_FORWARD);
+	tank1->move(MOVE_FORWARD);
 }
 
 void BaseGameLogic::tankBack() {
-	Tank.move(MOVE_BACK);
+	tank1->move(MOVE_BACK);
 }
 
 void BaseGameLogic::tankUp() {
-	Tank.setAngle(AIM_UP);
+	tank1->setAngle(AIM_UP);
 }
 
 void BaseGameLogic::tankDown() {
-	Tank.setAngle(AIM_DOWN);
+	tank1->setAngle(AIM_DOWN);
 }
 
 void BaseGameLogic::tankShoot() {
+	// For later
+}
 
+void BaseGameLogic::tankHealth() {
+	tank1->setHealth(HEALTH_TANK);
+}
+
+void BaseGameLogic::changeHealth() {
+	tank1->modHealth(MOD_HEALTH);
+}
+
+void BaseGameLogic::scoreBoard() {
 }

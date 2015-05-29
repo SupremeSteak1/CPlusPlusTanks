@@ -133,32 +133,31 @@ void update(int useless) {
 //Do respective actions when keyboard is pressed
 void keyboard() {
 	//REMEMBER TO MAKE SURE THE KEY YOU ARE TRYING TO USE IS DEFINED AT THE TOP OF THIS PAGE!!!
-
 	
 	if (GetAsyncKeyState(VK_ESCAPE)) {
 		exit(EXIT_SUCCESS);
 	}
-	/*
+	
 	if (GetAsyncKeyState(VK_D)) {
-		BaseGameLogic.moveForward(); 
+		gameLogic->tankForward();
 	}
 
 	if (GetAsyncKeyState(VK_A)) {
-		BaseGameLogic.moveBack(); 
+		gameLogic->tankBack(); 
 	}
 
 	if (GetAsyncKeyState(VK_W)) {
-		BaseGameLogic.aimUp(); 
+		gameLogic->tankUp(); 
 	}
 
 	if (GetAsyncKeyState(VK_S)) {
-		BaseGameLogic.aimDown(); 
+		gameLogic->tankDown(); 
 	}
 
+	/*
 	if (GetAsyncKeyState(VK_SPACE)) {
-		BaseGameLogic.shootRound(); 
+		gameLogic->shootRound(); 
 	}
-
 	*/
 
 	/*
