@@ -143,19 +143,19 @@ void keyboard() {
 	}
 
 	if (GetAsyncKeyState(VK_A)) {
-		gameLogic->tankBack(); 
+		gameLogic->tankBack();
 	}
 
 	if (GetAsyncKeyState(VK_W)) {
-		gameLogic->tankUp(); 
+		gameLogic->tankUp();
 	}
 
 	if (GetAsyncKeyState(VK_S)) {
-		gameLogic->tankDown(); 
+		gameLogic->tankDown();
 	}
 
 	if (GetAsyncKeyState(VK_SPACE)) {
-		gameLogic->tankShoot(); 
+		gameLogic->tankShoot();
 	}
 	
 
