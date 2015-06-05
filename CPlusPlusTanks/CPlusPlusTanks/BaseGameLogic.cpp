@@ -7,6 +7,7 @@
 #include <conio.h>
 #include <sstream> 
 #include <math.h>
+#include <vector>
 
 using namespace std;
 
@@ -23,15 +24,22 @@ double HEALTH_TANK;
 double MOD_HEALTH;
 double DAMAGE_TANK;
 float EXPLOSION_RADIUS; 
+int tank = 1;
+int swatch = 1;
+vector<vector<int>>* data;
 
 Tank* tank1;
 Tank* tank2;
+Tank* currentTank;
 
 BaseGameLogic::BaseGameLogic() {
 	init();
 }
 void BaseGameLogic::init() {
 	tank1 = new Tank();
+	tank2 = new Tank();
+	currentTank = tank1;
+	
 
 	MOVE_BACK = -.1;
 	MOVE_FORWARD = .1;
@@ -48,37 +56,51 @@ void BaseGameLogic::init() {
 	EXPLOSION_RADIUS = 10;
 }
 
+void BaseGameLogic::toggleTank() {
+	if (swatch == 1) {
+		currentTank = tank1;
+		swatch = 0;
+	}
+
+	if (swatch == 0) {
+		currentTank = tank2;
+		swatch = 1;
+	} 
+}
 void BaseGameLogic::update() {
 	// Game Start
+	tankHealth();
+	changeHealth();
+	scoreboard();
+	toggleTank();
 }
 
 void BaseGameLogic::tankForward() {
-	tank1->move(MOVE_FORWARD);
+	currentTank->move(MOVE_FORWARD);
 }
 
 void BaseGameLogic::tankBack() {
-	tank1->move(MOVE_BACK);
+	currentTank->move(MOVE_BACK);
 }
 
 void BaseGameLogic::tankUp() {
-	tank1->setAngle(AIM_UP);
+	currentTank->setAngle(AIM_UP);
 }
 
-void BaseGameLogic::tankDown() {
-	tank1->setAngle(AIM_DOWN);
+void BaseGameLogic::tankDown(){
+	currentTank->setAngle(AIM_DOWN);
 }
 
-void BaseGameLogic::tankShoot() {
-	// For later
+void BaseGameLogic::tankShoot(){
+	
 }
-
-void BaseGameLogic::tankHealth() {
-	tank1->setHealth(HEALTH_TANK);
+void BaseGameLogic::tankHealth(){
+	currentTank->setHealth(HEALTH_TANK);
 }
-
-void BaseGameLogic::changeHealth() {
-	tank1->modHealth(MOD_HEALTH);
+void BaseGameLogic::changeHealth(){
+	currentTank->modHealth(MOD_HEALTH);
 }
-
-void BaseGameLogic::scoreBoard() {
+void BaseGameLogic::scoreboard() {
+	// Every hit gives points equal to the amount of damage given
+	// Amount of health for a tank is 100
 }
