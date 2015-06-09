@@ -17,5 +17,9 @@ public:
 	void tankHealth();
 	void changeHealth();
 	void scoreboard();
+	void setPower(int power);
+	int getPower();
+	void setAngle(int angle);
+	int getAngle();
 };
 #endif

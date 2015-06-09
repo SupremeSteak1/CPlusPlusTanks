@@ -1,9 +1,11 @@
 #include "stdafx.h"
 #include "Trajectory.h"
 #include <vector>
-#include<math.h>
+#include <math.h>
 
-std::vector<std::vector<double>> trajectory(int xinitial, int yinitial, int yfinal, int speed, int angle, int count)
+using namespace std;
+
+std::vector<std::vector<double>> Trajectory::trajectory(int xinitial, int yinitial, int yfinal, int speed, int angle, int count)
 {
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	////the basic trajectory math is based on the projectile starting

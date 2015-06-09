@@ -15,6 +15,7 @@ using namespace std;
 #include"Tank.h"
 #include"BaseGameLogic.h"
 #include"RenderHandler.h"
+#include"Trajectory.h"
 
 double MOVE_BACK;
 double MOVE_FORWARD;
@@ -31,6 +32,8 @@ vector<vector<int>>* data;
 Tank* tank1;
 Tank* tank2;
 Tank* currentTank;
+Trajectory* trajectory;
+RenderHandler* renderHandlerB;
 
 BaseGameLogic::BaseGameLogic() {
 	init();
@@ -39,13 +42,14 @@ void BaseGameLogic::init() {
 	tank1 = new Tank();
 	tank2 = new Tank();
 	currentTank = tank1;
-	
+	trajectory = new Trajectory();
+	renderHandlerB = new RenderHandler();
 
 	MOVE_BACK = -.1;
 	MOVE_FORWARD = .1;
 
-	AIM_UP = 5;
-	AIM_DOWN = -5;
+	AIM_UP = 1;
+	AIM_DOWN = -1;
 
 	HEALTH_TANK = 100;
 	
@@ -90,9 +94,8 @@ void BaseGameLogic::tankUp() {
 void BaseGameLogic::tankDown(){
 	currentTank->setAngle(AIM_DOWN);
 }
-
 void BaseGameLogic::tankShoot(){
-	
+	renderHandlerB->shoot(trajectory->trajectory(currentTank->x, currentTank->y, currentTank->y, currentTank->getPower(), currentTank->getAngle(), 999));
 }
 void BaseGameLogic::tankHealth(){
 	currentTank->setHealth(HEALTH_TANK);

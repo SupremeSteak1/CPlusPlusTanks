@@ -96,14 +96,6 @@ void Main::init() {
 	gameLogic = new BaseGameLogic();
 }
 
-void Main::c_main( int position, int health, int shells, float angle) {
-
-}
-
-
-
-
-
 /*
  * Note that all of the following methods are not members of the class
  * because OpenGL requires that. This should not be a problem because

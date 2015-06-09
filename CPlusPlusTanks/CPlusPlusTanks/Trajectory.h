@@ -3,6 +3,7 @@
 
 #include<vector>
 class Trajectory {
+public:
 	std::vector<std::vector<double>> trajectory(int xinitial, int yinitial, int yfinal, int speed, int angle, int count);
 };
 #endif

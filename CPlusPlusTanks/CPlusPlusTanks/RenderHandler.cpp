@@ -26,8 +26,8 @@ textureObj texture[2];
 
 int LoadGLTextures() {
 	int Status=FALSE;
-	if (LoadTGA(&texture[0], "Compressed.tga") &&
-		LoadTGA(&texture[1], "Uncompressed.tga"))
+	if (LoadTGA(&texture[0], "Compressed2.tga") &&
+		LoadTGA(&texture[1], "Compressed.tga"))
 	{
 		Status=TRUE;
 
@@ -67,10 +67,9 @@ void RenderHandler::draw() {
     glLoadIdentity();
 
     // TODO draw our scene
-	drawCircle(100.0, 100.0, 50.0, 500, 1.0, 1.0, 1.0, true);
-	drawCircle(200.0, 100.0, 50.0, 500, 1.0, 1.0, 1.0, false);
-	drawRect(250.0, 50.0, 50, 100, 1.0, 1.0, 1.0, true);
-	drawRect(300.0, 50.0, 50, 100, 1.0, 1.0, 1.0, false);
+	drawRect(0,0,GetSystemMetrics(SM_CXSCREEN),50,0,255,0,true);
+
+	drawTexturedObject(50,50,50,50,255,255,255,0);
 
 	for(int i = 0; i < 2; i++) {
 		glEnable(GL_TEXTURE_2D);
@@ -168,4 +167,51 @@ void RenderHandler::drawRect(float x, float y, float width, float height, float 
 		glEnd();
 	}
 	glColor3f(1.0f, 1.0f, 1.0f);
+}
+
+void RenderHandler::drawText(float x, float y, std::string text, float r, float g, float b) {
+	glColor3f(1.0f, 1.0f, 1.0f);
+
+	glRasterPos2f(x,y);
+
+	glutBitmapString(GLUT_BITMAP_8_BY_13, (const unsigned char*)text.c_str());
+	glColor3f(1.0f, 1.0f, 1.0f);
+}
+
+std::string RenderHandler::int2str(int x) {
+	std::stringstream ss;
+	ss << x;
+	return ss.str();
+}
+
+void RenderHandler::drawTexturedObject(int x, int y, int width, int height, int r, int g, int b, int location) {
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, texture[location].texID);
+		glColor3ub(r, g, b);
+
+		glBegin(GL_QUADS);
+			glTexCoord2f(0.0, 0.0);
+			glVertex2f(x, y);
+
+			glTexCoord2f(1.0, 0.0);
+			glVertex2f(x+width, y);
+
+			glTexCoord2f(1.0, 1.0);
+			glVertex2f(x+width, y+height);
+
+			glTexCoord2f(0.0, 1.0);
+			glVertex2f(x, y+height);
+
+		glEnd();
+
+		glDisable(GL_TEXTURE_2D);
+		glColor3ub(0,0,0);
+}
+
+void RenderHandler::shoot(vector<vector<double>> test) {
+
+}
+
+void RenderHandler::drawScoreboard() {
+
 }
